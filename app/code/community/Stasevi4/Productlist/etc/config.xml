@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+  <modules>
+    <Stasevi4_Productlist> 
+      <version>1.0.0</version>
+	</Stasevi4_Productlist>
+  </modules>
+  
+  <global>
+    <models>
+	  <stasevi4_productlist>
+	    <class>Stasevi4_Productlist_Model</class>
+	  </stasevi4_productlist>
+	</models>
+	<helpers>
+	  <stasevi4_productlist>
+	    <class>Stasevi4_Productlist_Helper</class>
+	  </stasevi4_productlist>
+	</helpers>
+  </global>
+  
+  <frontend>
+	<layout>
+	  <updates>
+	    <stasevi4_productlist>
+		  <file>stasevi4_productlist.xml</file>
+		</stasevi4_productlist>
+	  </updates>
+	</layout>
+
+	<routers>
+	  <stasevi4_productlist>
+		<use>standard</use>
+		<args>
+			<module>Stasevi4_Productlist</module>
+			<frontName>productlist</frontName>
+		</args>
+	  </stasevi4_productlist>
+	</routers>
+	
+  </frontend>
+</config>

@@ -1,0 +1,40 @@
+<script>   
+
+              jQuery( document ).ready(function() {
+                ajax('/productlist/ajax/index/?dir=desc&order=created_at');
+			  });
+			  
+			  // Change Url of sort and pagination
+			  jQuery('.toolbar_pager a').live('click', function(){			  
+					ajax(jQuery(this).attr('href'));
+					return false;
+			  });	
+			  // Change Url of select
+			  jQuery(".toolbar_pager select").live('change', function() {
+					ajax(jQuery(this).val()); // or $(this).val()
+					return false;
+			  });
+			 
+			  
+			  function ajax(url){
+			     
+				  jQuery.ajax({
+						url: url,
+						data: {
+							name : "The name",
+							desc : "The description"
+							}
+					})
+					.success (function(response) { 
+								if(jQuery('.col-main')){  
+								   result = jQuery(response).find(".category-products");	
+								   jQuery(result).find(".spinner").remove();
+								   jQuery(result).find(".toolbar_pager select").removeAttr("onchange");
+                                   jQuery( ".col-main" ).html( result );
+                                }
+
+					})
+					.error   (function()     { alert("Error")   ; });	
+             }     
+			
+</script>  
