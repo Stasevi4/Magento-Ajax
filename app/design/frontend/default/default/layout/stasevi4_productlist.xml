@@ -18,6 +18,7 @@
 
         <reference name="content">
             <!-- Add product list to content -->
+			
             <block type="catalog/product_list" name="product_list" template="catalog/product/list.phtml">
                 <!-- Add toolbar to product list -->
                 <block type="catalog/product_list_toolbar" name="product_list_toolbar" template="catalog/product/list/toolbar.phtml">
@@ -47,7 +48,7 @@
 
                 <!-- Set default direction to ascending -->
                 <action method="setDefaultDirection">
-                    <value>asc</value>
+                    <value>desc</value>
                 </action>
 
                 <action method="setColumnCount">

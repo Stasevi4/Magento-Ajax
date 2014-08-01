@@ -1,7 +1,12 @@
+<?php 
+  $category ='';
+  if(Mage::app()->getRequest()->getParam('categoryid')){
+    $category = "?categoryid=" . Mage::app()->getRequest()->getParam('categoryid');
+  }
+?>
 <script>   
-
               jQuery( document ).ready(function() {
-                ajax('/productlist/ajax/index/?dir=desc&order=created_at');
+                ajax('/productlist/ajax/index/<?php echo $category?>');
 			  });
 			  
 			  // Change Url of sort and pagination
